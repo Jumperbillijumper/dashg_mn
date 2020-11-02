@@ -4,7 +4,7 @@ Shell script to install a [PIVX Masternode](http://pivx.org/) on a Linux server 
 ***
 ## Installation:
 ```
-1) wget -q https://raw.githubusercontent.com/Jumperbillijumper/pivx_mn/master/Pivx_install.sh && bash pivx_install.sh
+wget -q https://raw.githubusercontent.com/Jumperbillijumper/pivx_mn/master/Pivx_install.sh && bash pivx_install.sh
 
 ```
 ***
