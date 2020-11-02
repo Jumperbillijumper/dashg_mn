@@ -39,9 +39,10 @@ read DOSETUPTWO
 if [[ $DOSETUPTWO =~ "y" ]] ; then
 
 pivx-cli stop > /dev/null 2>&1
+cd ~
 wget https://github.com/PIVX-Project/PIVX/releases/download/v4.3.0/pivx-4.3.0-x86_64-linux-gnu.tar.gz 
 tar -xvzf pivx-4.3.0-x86_64-linux-gnu.tar.gz
-mkdir /usr/local/bin/pivx
+mkdir ./pivx
 mv pivx-4-3-0/pivx-cli ./pivx
 mv pivx-4-3-0/pivxd ./pivx
 chmod +x ./pivx*
