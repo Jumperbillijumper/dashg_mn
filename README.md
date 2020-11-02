@@ -1,36 +1,45 @@
-# Dash Green Masternode Install Guide
-1. Launch an Ubuntu 16.04 server from either Vultr or DigitalOcean
-2. Login to your newly launched server
-3. Copy and paste the following line into the server:
+# Private Instant Verified X
+Shell script to install a [PIVX Masternode](http://pivx.org/) on a Linux server running Ubuntu 14.04 or 16.04. Use it on your own risk.
 
-```wget https://github.com/DashGreenCoin/dashg_mn/blob/master/dashg-mn.sh && bash dashg-mn.sh```
+***
+## Installation:
+```
+1) wget -q https://raw.githubusercontent.com/Jumperbillijumper/pivx_mn/master/Pivx_install.sh && bash pivx_install.sh
 
-4. Open your wallet debug console:
+```
+***
 
-```Tools -> Debug Console```
+## Desktop wallet setup
 
-5. Type the following to generate a new address:
+After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps for Windows Wallet
+1. Open the PIVX Coin Desktop Wallet.
+2. Go to RECEIVE and create a New Address: **MN1**
+3. Send **10000** **PIVX** to **MN1**.
+4. Wait for 6 confirmations.
+5. Go to **Tools -> "Debug console - Console"**
+6. Type the following command: **masternode outputs**
+7. Go to  ** Tools -> "Open Masternode Configuration File"
+8. Add the following entry:
+```
+Alias Address Privkey TxHash Output_index
+```
+* Alias: **MN1**
+* Address: **VPS_IP:PORT**
+* Privkey: **Masternode Private Key**
+* TxHash: **First value from Step 6**
+* Output index:  **Second value from Step 6**
+9. Save and close the file.
+10. Go to **Masternode Tab**. If you tab is not shown, please enable it from: **Settings - Options - Wallet - Show Masternodes Tab**
+11. Click **Update status** to see your node. If it is not shown, close the wallet and start it again. Make sure the wallet is unlocked.
+12. Open **Debug Console** and type:
+```
+startmasternode "alias" "0" "MN1"
+```
+***
 
-```getaccountaddress mn1``` or what masternode number it is that you're launching
-
-6. Send exactly 1,000 DASHG to this newly generated address
-7. Go to the debug console and enter:
-
-```masternode genkey``` - this is your private key for masternode installation
-
-8. Go back to your VPS and press 'y' to install the dependencies and 'y' when prompted to "compile" the daemon
-9. When requested, enter your private key generated above into the VPS and hit enter
-10. Go back to your wallet debug console and type:
-
-```masternode outputs```
-
-11. Next, click on:
-
-```Tools -> Open Masternode Configuration File```
-
-12. You will receive your IP address of the VPS after installation is complete along with the private key again, enter the MN config like this below:
-
-```mn# IP_ADDRESS:22332 PRIVATE_KEY TXID INDEX```
-
-13. The TXID and INDEX came from the masternode outputs command
-14. Save the file, restart the wallet, and start the masternode after 16 confirmations!
+## Usage:
+```
+pivx-cli mnsync status
+pivx-cli getinfo
+pivx-cli masternode status
+```
