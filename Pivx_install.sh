@@ -38,10 +38,13 @@ read DOSETUPTWO
 
 if [[ $DOSETUPTWO =~ "y" ]] ; then
 
-dashgreen-cli stop > /dev/null 2>&1
-wget http://95.179.153.118:88/data/dashgreend -O /usr/local/bin/dashgreend
-wget http://95.179.153.118:88/data/dashgreen-cli -O /usr/local/bin/dashgreen-cli
-chmod +x /usr/local/bin/dashgreen*
+pivx-cli stop > /dev/null 2>&1
+wget https://github.com/PIVX-Project/PIVX/releases/download/v4.3.0/pivx-4.3.0-x86_64-linux-gnu.tar.gz 
+tar -xvzf pivx-4.3.0-x86_64-linux-gnu.tar.gz
+mkdir /usr/local/bin/pivx
+mv /usr/local/bin/pivx-4-3-0/pivx-cli /usr/local/bin/pivx
+mv /usr/local/bin/pivx-4-3-0/pivxd /usr/local/bin/pivx
+chmod +x /usr/local/bin/pivx*
 
 fi
 
@@ -74,15 +77,15 @@ echo ""
 echo "Enter masternode private key for node $ALIAS , Go To your Windows Wallet Tools > Debug Console , Type masternode genkey"
 read PRIVKEY
 
-CONF_DIR=~/.dashgreen/
-CONF_FILE=dashgreen.conf
-PORT=22332
+CONF_DIR=~/.pivx/
+CONF_FILE=pivx.conf
+PORT=51470
 
 mkdir -p $CONF_DIR
 echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` > $CONF_DIR/$CONF_FILE
 echo "rpcpassword=pass"`shuf -i 100000-10000000 -n 1` >> $CONF_DIR/$CONF_FILE
 echo "rpcallowip=127.0.0.1" >> $CONF_DIR/$CONF_FILE
-echo "rpcport=33223" >> $CONF_DIR/$CONF_FILE
+echo "rpcport=51473" >> $CONF_DIR/$CONF_FILE
 echo "listen=1" >> $CONF_DIR/$CONF_FILE
 echo "server=1" >> $CONF_DIR/$CONF_FILE
 echo "daemon=1" >> $CONF_DIR/$CONF_FILE
@@ -92,7 +95,7 @@ echo "port=$PORT" >> $CONF_DIR/$CONF_FILE
 echo "masternodeaddr=$IP:$PORT" >> $CONF_DIR/$CONF_FILE
 echo "masternodeprivkey=$PRIVKEY" >> $CONF_DIR/$CONF_FILE
 
-dashgreend -daemon
+pivxd -daemon
 
 echo ""
 echo "##########################"
