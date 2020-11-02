@@ -96,7 +96,7 @@ echo "port=$PORT" >> $CONF_DIR/$CONF_FILE
 echo "masternodeaddr=$IP:$PORT" >> $CONF_DIR/$CONF_FILE
 echo "masternodeprivkey=$PRIVKEY" >> $CONF_DIR/$CONF_FILE
 
-pivxd -daemon
+pivx/pivxd -daemon
 
 echo ""
 echo "##########################"
