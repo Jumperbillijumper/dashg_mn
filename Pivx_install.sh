@@ -43,8 +43,8 @@ cd ~
 wget https://github.com/PIVX-Project/PIVX/releases/download/v4.3.0/pivx-4.3.0-x86_64-linux-gnu.tar.gz 
 tar -xvzf pivx-4.3.0-x86_64-linux-gnu.tar.gz
 mkdir ./pivx
-mv pivx-4-3-0/bin/pivx-cli ./pivx
-mv pivx-4-3-0/bin/pivxd ./pivx
+mv pivx-4.3.0/bin/pivx-cli ./pivx
+mv pivx-4.3.0/bin/pivxd ./pivx
 chmod +x ./pivx*
 
 fi
