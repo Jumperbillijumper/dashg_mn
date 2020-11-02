@@ -80,7 +80,7 @@ read PRIVKEY
 
 CONF_DIR=~/.pivx/
 CONF_FILE=pivx.conf
-PORT=51470
+PORT=51472
 
 mkdir -p $CONF_DIR
 echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` > $CONF_DIR/$CONF_FILE
