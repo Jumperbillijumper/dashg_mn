@@ -3,10 +3,9 @@ Shell script to install a [PIVX Masternode](http://pivx.org/) on a Linux server 
 
 ***
 ## Installation:
-```
+
 wget -q https://raw.githubusercontent.com/Jumperbillijumper/pivx_mn/master/Pivx_install.sh && bash Pivx_install.sh
 
-```
 ***
 
 ## Desktop wallet setup
