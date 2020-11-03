@@ -1,5 +1,12 @@
 # Private Instant Verified X
-Shell script to install a [PIVX Masternode](http://pivx.org/) on a Linux server running Ubuntu 14.04 or 16.04. Use it on your own risk.
+Shell script to install a [PIVX Masternode](http://pivx.org/) on a Linux server running Ubuntu (tested with 16.04). Use it on your own risk.
+
+## Book cheapest server:
+
+VULTR (english): https://www.vultr.com/?ref=8718978
+Contabo (german): https://www.contabo.jumperbillijumper.de
+
+Thanks for your support! It's a little donation for my time. You pay none penny more.
 
 ***
 ## Installation:
@@ -38,7 +45,7 @@ startmasternode "alias" "0" "MN1"
 
 ## Usage:
 ```
-pivx-cli mnsync status
-pivx-cli getinfo
-pivx-cli masternode status
+pivx/pivx-cli mnsync status
+pivx/pivx-cli getinfo
+pivx/pivx-cli masternode status
 ```
