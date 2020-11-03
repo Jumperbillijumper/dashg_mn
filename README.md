@@ -4,6 +4,7 @@ Shell script to install a [PIVX Masternode](http://pivx.org/) on a Linux server 
 ## Book cheapest server:
 
 VULTR (english): https://www.vultr.com/?ref=8718978
+
 Contabo (german): https://www.contabo.jumperbillijumper.de
 
 Thanks for your support! It's a little donation for my time. You pay none penny more.
