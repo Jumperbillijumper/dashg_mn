@@ -11,7 +11,7 @@ Contabo (german): https://www.contabo.jumperbillijumper.de
 
 Contabo (english): https://www.kqzyfj.com/click-100260512-13796460
 
-Thanks for your support! It's a little donation for my time. You pay none penny more.
+Thanks for your support! It's a little donation for my time. You pay nothing more.
 
 ***
 ## Installation:
